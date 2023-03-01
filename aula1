@@ -1,8 +1,9 @@
 package avaliacao;
 
+import java.util.Locale;
 import java.util.Scanner;
 
-public class media {
+public class Media {
 	
 	public void mediaAritmetica(double N1, double N2, double N3){
 		double media = (N1+N2+N3)/3;
@@ -17,19 +18,27 @@ public class media {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		media nota; // declaração do objeto 
-		nota = new media(); //estancianco objeto
-		
-		int op;
+		Media nota; // declaração do objeto 
+		nota = new Media(); //estancianco objeto
+
+		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Digite 1 para obter a media aritmécita ou 2 para media ponderada");
+		System.out.print("Informe a nota para N1: ");
+		double N1 = sc.nextDouble();
+		System.out.print("Informe a nota para N2: ");
+		double N2 = sc.nextDouble();
+		System.out.print("Informe a nota para N3: ");
+		double N3 = sc.nextDouble();
+		
+		System.out.println("Digite 1 para obter a média aritmécita \nDigite 2 para obter a média ponderada");
+		int op;
 		op = sc.nextInt();
 		
 		if(op==1) {
-			nota.mediaAritmetica(2.0, 5.0, 6.0);			
+			nota.mediaAritmetica(N1, N2, N3);			
 		}
 		else { 
-			System.out.println("Média Ponderada = "+ nota.mediaPonderada(2.0, 5.0, 6.0));
+			System.out.println("Média Ponderada = "+ nota.mediaPonderada(N1, N2, N3));
 				
 		}
 		
